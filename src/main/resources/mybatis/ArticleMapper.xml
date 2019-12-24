@@ -40,8 +40,8 @@
 		  ,complainCnt FROM cms_article
 		  <where>
 		  deleted=0
-		  <if test="xl1!=null and xl1!=''">
-		  	and status=#{xl1}
+		  <if test="status!=-1">
+		  	and status=#{status}
 		  </if>
 		  </where>
 		  ORDER BY id DESC  

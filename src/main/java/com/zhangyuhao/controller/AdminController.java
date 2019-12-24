@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.pl.REGON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageHelper;
@@ -39,7 +40,7 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping("article")
-	public String article(HttpServletRequest request,int status,int page,Integer xl1,Integer xl2){
+	public String article(HttpServletRequest request,@RequestParam(defaultValue="-1")int status,@RequestParam(defaultValue="1")int page,Integer xl1,Integer xl2){
 		PageInfo<Article> articlePage =  articleservice.list(status,page,xl1,xl2);
 		request.setAttribute("articlePage", articlePage);
 		request.setAttribute("status", status);

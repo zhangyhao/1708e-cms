@@ -45,7 +45,7 @@ public interface ArticleMapper {
 			+ "updated=now() WHERE id=#{id} ")
 	int update(Article article);
 
-	List<Article> list(int status,@Param("xl1")Integer xl1,@Param("xl2")Integer xl2);
+	List<Article> list(@Param("status")int status,@Param("xl1")Integer xl1,@Param("xl2")Integer xl2);
 	
 	@Select("SELECT id,title,channel_id channelId , category_id categoryId,status ,hot "
 			+ " FROM cms_article WHERE id = #{value} ")

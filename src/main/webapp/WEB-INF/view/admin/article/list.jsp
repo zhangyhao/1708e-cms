@@ -3,26 +3,20 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!-- <div class="container-fluid"> -->
-	<!-- <form action="article" method="post">
-		<tr>
-			<td>状态</td>
-			<td><select name="xl1">
-				<option value=" ">---请选择--</option>
-				<option value="0">待审核</option>
-				<option value="1">审核</option>
-			</select></td>
-			<td>热门</td>
-			<td><select name="xl2">
-				<option value=" ">--请选择--</option>
-				<option value="0">非热门</option>
-				<option value="1">热门</option>
-			</select></td>
-			<td><input type="submit" value="提交"></td>
-		</tr>
-	
-	</form> -->
 	<table class="table table-hover">
 		<!-- articlePage -->
+		<tr>
+			<td>状态</td>
+			<td><select id="status" name="status">
+				<option value="-1">全部</option>
+				<option value="0">待审核</option>
+				<option value="1">审核通过</option>
+				<option value="2">审核拒绝</option>
+			</select></td>
+			
+		<td><input type="button" value="提交" onclick="status()"></td></tr>
+		
+		
 	  <thead>
           <tr>
             <th>id</th>
@@ -65,11 +59,12 @@
         	</c:forEach>
         </tbody>
       </table>
-   
+      
+      
       <nav aria-label="Page navigation example">
 		  <ul class="pagination justify-content-center">
 		    <li class="page-item">
-		      <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="gopage('1')">首</a>
+		      <a class="page-link" href="javascript:void()" tabindex="-1" aria-disabled="true" onclick="gopage('1')">首</a>
 		    </li>
 		   	<c:forEach begin="1" end="${articlePage.pages}" varStatus="i">
 		   		<li class="page-item"><a class="page-link" href="javascript:void()" onclick="gopage(${i.index})">${i.index}</a></li>
@@ -77,7 +72,7 @@
 		    
 		   
 		    <li class="page-item">
-		      <a class="page-link" href="#" onclick="gopage(${articlePage.pages})">尾</a>
+		      <a class="page-link" href="javascript:void()" onclick="gopage(${articlePage.pages})">尾</a>
 		    </li>
 		  </ul>
 		</nav>
@@ -148,6 +143,12 @@
 		$("#complainListDiv").load("/article/complains?articleId="+id);
 		$('#complainModal').modal('hide')
 	}
+	
+	function status() {
+		var id = $("#status").val();
+		$("#workcontent").load("/admin/article?&status="+id);
+	}
+	
 	
 	function del(id){
 		alert(id)
