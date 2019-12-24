@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %> 
 
+
 修改文章
 <form name="articleform" id="articleform">
  <input type="hidden" name="id" value="${article.id}">

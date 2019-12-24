@@ -3,7 +3,7 @@ package com.zhangyuhao.common;
 /**
  * 
  * @author zhuzg
- *
+ *  
  */
 public class FileResult {
 	

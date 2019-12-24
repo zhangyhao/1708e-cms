@@ -10,7 +10,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import com.zhangyuhao.common.CmsContant;
 import com.zhangyuhao.entity.User;
 import com.zhangyuhao.service.UserService;
-
+ 
 public class CmsInterceptor implements HandlerInterceptor{
 
 	@Autowired

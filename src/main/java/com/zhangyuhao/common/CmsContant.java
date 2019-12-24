@@ -1,7 +1,7 @@
 package com.zhangyuhao.common;
 
 public class CmsContant {
-
+   
 	public static final String USER_Key="loing_session_key";
 	//普通用户
 	public static final int USER_ROLE_GENERAL=0;

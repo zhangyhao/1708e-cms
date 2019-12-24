@@ -52,7 +52,7 @@
 
 </head>
 <body>
- <!-- 导航条 -->
+ <!-- 导航条  -->
 
  <jsp:include page="common/header.jsp"></jsp:include>
 

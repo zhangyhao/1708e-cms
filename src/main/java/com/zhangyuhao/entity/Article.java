@@ -1,5 +1,5 @@
 package com.zhangyuhao.entity;
-
+ 
 import java.util.Date;
 
 public class Article {

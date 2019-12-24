@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  */
 public class CmsMessage implements Serializable{
-   
+      
 	/**
 	 * 
 	 */

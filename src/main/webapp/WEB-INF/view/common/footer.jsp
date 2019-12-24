@@ -5,6 +5,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark  justify-content-center" >
 	<c:forEach items="${list}" var="link">
         		<tr>
+        		
+        		
         			<td><h6><a href="${link.url}" style="color:red">${link.name}</a>&nbsp;&nbsp;&nbsp;</h6></td>
         		</tr>
         	</c:forEach>

@@ -3,7 +3,7 @@ package com.zhangyuhao.entity;
 import java.io.Serializable;
 
 public class Slide implements Serializable{
-
+ 
 	/**
 	 * 
 	 */

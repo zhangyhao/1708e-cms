@@ -37,7 +37,7 @@
 	
 	<div class="container row">
 		<div class="col-md-2" style="margin-top:20px ; border-right:solid 2px"> 
-			<!-- 左侧的菜单 -->
+			<!-- 左侧的菜单  -->
 			<ul class="nav flex-column mymenuselected">
 				  <li class="nav-item ">
 				    <a  class="nav-link active" href="javascript:void()" onclick="showWork($(this),'/admin/article?status=0&page=1')" >文章管理</a>

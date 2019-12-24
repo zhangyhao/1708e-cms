@@ -12,7 +12,7 @@ import com.zhangyuhao.entity.Comment;
 import com.zhangyuhao.entity.Complain;
 import com.zhangyuhao.entity.Link;
 import com.zhangyuhao.entity.Slide;
-
+ 
 public interface ArticleService {
 
 	PageInfo<Article> listByUser(Integer id, int page);

@@ -1,7 +1,7 @@
 package com.zhangyuhao.common;
 
 public class CmsError {
-
+   
 	//成功
 	public static final int SUCCESS=1;
 	

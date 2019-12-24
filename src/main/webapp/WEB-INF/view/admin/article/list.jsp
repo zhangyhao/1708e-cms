@@ -7,7 +7,7 @@
 		<tr>
 			<td>状态</td>
 			<td><select name="xl1">
-				<option value=" ">--请选择--</option>
+				<option value=" ">---请选择--</option>
 				<option value="0">待审核</option>
 				<option value="1">审核</option>
 			</select></td>

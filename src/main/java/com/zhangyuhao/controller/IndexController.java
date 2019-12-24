@@ -19,7 +19,7 @@ import com.zhangyuhao.service.ArticleService;
 
 @Controller
 public class IndexController {  
-
+   
 	@Autowired
 	ArticleService articleService;
 	/**

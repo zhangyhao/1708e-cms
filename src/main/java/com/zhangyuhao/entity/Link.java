@@ -1,7 +1,7 @@
 package com.zhangyuhao.entity;
 
 import java.io.Serializable;
-
+ 
 //友情链接
 public class Link implements Serializable{
     /**

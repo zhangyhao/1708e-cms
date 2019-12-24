@@ -1,7 +1,7 @@
 package com.zhangyuhao.entity;
 
 public class Channel extends AbstractCategory{
-
+ 
 	/**
 	 * 
 	 */

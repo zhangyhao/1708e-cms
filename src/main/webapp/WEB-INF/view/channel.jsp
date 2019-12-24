@@ -56,7 +56,7 @@
 
 </head>
 <body>
- <!-- 导航条 -->
+ <!-- 导航条  -->
  <jsp:include page="common/header.jsp"></jsp:include>
 
 <div class="container-fluid" style="margin-top:20px;margin-bottom:20px">

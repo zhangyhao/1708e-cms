@@ -17,7 +17,7 @@ import com.zhangyuhao.common.CmsMessage;
 import com.zhangyuhao.entity.Article;
 import com.zhangyuhao.entity.Link;
 import com.zhangyuhao.service.ArticleService;
-
+  
 @RequestMapping("admin")
 @Controller
 public class AdminController {

@@ -1,5 +1,5 @@
 package com.zhangyuhao.entity;
-
+ 
 import java.io.Serializable;
 
 public class AbstractCategory implements Serializable{

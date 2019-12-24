@@ -39,7 +39,7 @@ import com.zhangyuhao.service.UserService;
 @Controller
 @RequestMapping("user")
 public class UserController {
-
+  
 	@Value("${upload.path}")
 	String picRootPath;
 	

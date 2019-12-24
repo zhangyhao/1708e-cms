@@ -1,7 +1,7 @@
 package com.zhangyuhao.entity;
 
 import java.util.Date;
-
+ 
 
 public class Comment {
     private Integer id;

@@ -1,5 +1,5 @@
 package com.zhangyuhao.entity;
-
+ 
 public class Category extends AbstractCategory{
 
 	/**

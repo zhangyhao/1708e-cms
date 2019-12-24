@@ -30,7 +30,7 @@ import com.zhangyuhao.service.ArticleService;
 @Controller
 @RequestMapping("article")
 public class ArticleController extends BaseController{
-
+   
 	@Autowired  
 	ArticleService aservice;
 	/**

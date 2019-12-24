@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 import com.zhangyuhao.entity.User;
-
+ 
 public interface UserMapper {
 
 	//姓名唯一

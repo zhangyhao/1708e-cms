@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  <typeAliases>
     <!-- todo -->
    <package name="com.zhangyuhao.entity"/>
-   <!-- todo -->
+   <!--  todo -->
    <package name="com.zhangyuhao.vo"/>
  </typeAliases>
  

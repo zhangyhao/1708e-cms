@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.zhangyuhao.cms.FileUtils;
 
 public class BaseController {
-
+  
 	@Value("${upload.path}")
 	String picRootPath;
 	

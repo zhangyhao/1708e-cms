@@ -7,7 +7,7 @@
   <name>bw-cms-1708e</name>
   <description>这是一个高仿今日头条的项目</description>
   
-    <!-- 定义主要版本号 -->
+    <!-- 定义主要版 本号 -->
 	<properties>
 		<spring.version>5.1.5.RELEASE</spring.version>
 		<mybatis.version>3.4.2</mybatis.version>

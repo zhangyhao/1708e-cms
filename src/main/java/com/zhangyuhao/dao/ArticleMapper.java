@@ -18,7 +18,7 @@ import com.zhangyuhao.entity.Channel;
 import com.zhangyuhao.entity.Comment;
 import com.zhangyuhao.entity.Complain;
 import com.zhangyuhao.entity.Link;
-
+ 
 public interface ArticleMapper {
 
 	List<Article> listByUser(Integer id);

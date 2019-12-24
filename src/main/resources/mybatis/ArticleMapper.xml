@@ -21,7 +21,7 @@
 		  ORDER BY id DESC  
 	</select>
 	
-	<!-- 获取频道 -->
+	<!-- 获取频道  -->
 	<select id="findChannel" resultType="channel">
 		SELECT id,name FROM cms_channel WHERE id=#{value}
 	</select>

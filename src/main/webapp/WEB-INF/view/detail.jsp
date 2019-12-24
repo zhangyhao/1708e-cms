@@ -13,6 +13,7 @@
 <script type="text/javascript" src="/js/jqueryvalidate/localization/messages_zh.js"></script>
 </head>
 <body>
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	</nav>
 	<div class="container">
