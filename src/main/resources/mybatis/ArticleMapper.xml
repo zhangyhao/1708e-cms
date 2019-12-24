@@ -78,7 +78,7 @@
     <resultMap type="complain" id="ComplainMapper">
 		<result column="article_id" property="articleId"/>
 		<result column="complain_type" property="complainType"/>
-		<result column="src_url" property="srcUrl"/>
+		<result column="src_url" property="scrUrl"/>
 		<result column="compain_option" property="compainOption"/>
 		<result column="user_id" property="userId"/>
 		<association column="user_id" property="user" 

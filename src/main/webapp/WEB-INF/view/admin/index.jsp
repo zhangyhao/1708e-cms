@@ -52,7 +52,7 @@
 				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/user')" >用户管理管理</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/user')" >投诉管理</a>
+				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/article/plain')" >投诉管理</a>
 				  </li>
 				</ul>	
 		</div>

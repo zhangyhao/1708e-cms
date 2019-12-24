@@ -129,5 +129,9 @@ public interface ArticleMapper {
 
 	List<Complain> getComplains(int articleId);
 
+	@Select("SELECT c.id,c.complain_type,c.content,c.compain_option,c.src_url,c.picture,c.email,c.mobile,c.created,u.username username,a.title title "
+			+ "FROM cms_complain c,cms_user u,cms_article a where c.user_id=u.id and c.article_id=a.id")
+	List<Complain> plain();
+
 
 }

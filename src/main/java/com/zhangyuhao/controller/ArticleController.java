@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zhangyuhao.cms.StringUtils;
 import com.zhangyuhao.common.CmsContant;
@@ -168,5 +169,13 @@ public class ArticleController extends BaseController{
 			return "article/complainslist";
 	}
 	
-	
+	@RequestMapping("plain")
+	public Object plain(HttpServletRequest request,@RequestParam(defaultValue="1")int page){
+		PageHelper.startPage(page, 5);
+		List<Complain> plain = aservice.plain();
+		PageInfo<Complain> pg = new PageInfo<Complain>(plain);
+		request.setAttribute("plain", plain);
+		request.setAttribute("pg", pg);
+		return "article/plain";
+	}
 }

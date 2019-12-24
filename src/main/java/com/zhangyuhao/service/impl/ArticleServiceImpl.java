@@ -191,4 +191,10 @@ public class ArticleServiceImpl implements ArticleService {
 		PageHelper.startPage(page, CmsContant.PAGE_SIZE);
 		return new PageInfo<Complain>(amapper.getComplains(articleId));
 	}
+	
+	@Override
+	public List<Complain> plain() {
+		// TODO Auto-generated method stub
+		return amapper.plain();
+	}
 }
