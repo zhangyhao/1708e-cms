@@ -167,4 +167,6 @@ public class ArticleController extends BaseController{
 			request.setAttribute("complianPage", complianPage);
 			return "article/complainslist";
 	}
+	
+	
 }

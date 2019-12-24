@@ -133,7 +133,7 @@
 					  <ul class="pagination ">
 					  
 					    <li class="page-item">
-					      <a class="page-link" href="/index/index?page=${articlePage.pageNum-1}" aria-label="Previous">
+					      <a class="page-link" href="/index?page=${articlePage.pageNum-1}" aria-label="Previous">
 					        <span aria-hidden="true">&laquo;</span>
 					      </a>
 					    </li>

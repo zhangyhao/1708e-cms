@@ -40,7 +40,7 @@
 			<!-- 左侧的菜单  -->
 			<ul class="nav flex-column mymenuselected">
 				  <li class="nav-item ">
-				    <a  class="nav-link active" href="javascript:void()" onclick="showWork($(this),'/admin/article?status=0&page=1')" >文章管理</a>
+				    <a  class="nav-link active" href="javascript:void()" onclick="showWork($(this),'/admin/article')" >文章管理</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/comment')" >评论管理</a>
@@ -50,6 +50,9 @@
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/user')" >用户管理管理</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/user')" >投诉管理</a>
 				  </li>
 				</ul>	
 		</div>
