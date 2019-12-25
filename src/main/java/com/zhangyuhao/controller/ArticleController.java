@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -141,13 +143,20 @@ public class ArticleController extends BaseController{
 	@RequestMapping(value="complain",method=RequestMethod.POST)
 	public Object complain(HttpServletRequest request,@ModelAttribute("complain")@Valid
 			Complain complain,BindingResult result,MultipartFile file) throws IllegalStateException, IOException{
-			if(!StringUtils.isUrl(complain.getScrUrl())){
+			
+			User user = (User) request.getSession().getAttribute(CmsContant.USER_Key);
+			if(!StringUtils.isHttpUrl(complain.getScrUrl())){
 				result.rejectValue("scrUrl", "", "不是合法的Url地址");
+			}
+			Integer userId = complain.getArticleId();
+			Integer uid = aservice.getArticleId(userId);
+			if(uid==user.getId()){
+				result.rejectValue("scrUrl", "", "自己不能投诉自己文章");
 			}
 			if(result.hasErrors()){
 				return "article/complain";
 			}
-			User user = (User) request.getSession().getAttribute(CmsContant.USER_Key);
+	
 			String picUrl = this.processFile(file);
 			complain.setPicture(picUrl);
 			
@@ -170,12 +179,37 @@ public class ArticleController extends BaseController{
 	}
 	
 	@RequestMapping("plain")
-	public Object plain(HttpServletRequest request,@RequestParam(defaultValue="1")int page){
-		PageHelper.startPage(page, 5);
-		List<Complain> plain = aservice.plain();
-		PageInfo<Complain> pg = new PageInfo<Complain>(plain);
+	public Object plain(HttpServletRequest request,@RequestParam(defaultValue="1")int page,Integer type,Integer complain1,Integer complain2,Integer a){
+		/*if(complain1>complain2){
+			result.rejectValue("complain1", "", "前者不能大于后者");
+		}
+		if(result.hasErrors()){
+			return "article/plain";
+		}*/
+		List<Complain> plain = null ;
+		 PageInfo<Complain> pg = null;
+		if(a==null){
+			PageHelper.startPage(page, 5);
+			plain = aservice.plain(type,complain1,complain2);
+			 pg = new PageInfo<Complain>(plain);
+		}else if(a==1){
+			 plain = aservice.plainDesc(type,complain1,complain2);
+			 request.setAttribute("plain", plain);
+			 return "article/plain";
+		}else if(a==2){
+			 plain = aservice.plainAsc();
+			 request.setAttribute("plain", plain);
+			 return "article/plain";
+		}
 		request.setAttribute("plain", plain);
 		request.setAttribute("pg", pg);
 		return "article/plain";
+	}
+	@RequestMapping("xq")
+	public Object xq(Integer id,HttpServletRequest request,HttpServletResponse response){
+		System.out.println(id);
+		List<Complain> list = aservice.xq(id);
+		request.setAttribute("link", list);
+		return "xq";
 	}
 }

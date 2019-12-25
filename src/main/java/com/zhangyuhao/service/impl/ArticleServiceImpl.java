@@ -193,8 +193,39 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 	
 	@Override
-	public List<Complain> plain() {
+	public List<Complain> plain(Integer type, Integer complain1, Integer complain2) {
 		// TODO Auto-generated method stub
-		return amapper.plain();
+		return amapper.plain(type,complain1,complain2);
+	}
+	@Override
+	public Integer getArticleId(Integer userId) {
+		// TODO Auto-generated method stub
+		return amapper.getArticleId(userId);
+	}
+	@Override
+	public List<Complain> plainAsc() {
+		// TODO Auto-generated method stub
+		return amapper.plainAsc();
+	}
+	@Override
+	public List<Complain> xq(Integer id) {
+		// TODO Auto-generated method stub
+		return amapper.xq(id);
+	}
+	@Override
+	public List<Complain> plainDesc(Integer type, Integer complain1,
+			Integer complain2) {
+		// TODO Auto-generated method stub
+		return amapper.plainDesc();
+	}
+	@Override
+	public List<Complain> complain() {
+		// TODO Auto-generated method stub
+		return amapper.complain();
+	}
+	@Override
+	public List<Complain> newcom() {
+		// TODO Auto-generated method stub
+		return amapper.newcom();
 	}
 }

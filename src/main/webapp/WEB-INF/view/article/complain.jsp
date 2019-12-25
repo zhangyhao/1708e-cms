@@ -22,7 +22,6 @@
 		<div class="form-group">
 		   <label >文章标题</label>${article.title}
 		  </div>
-		  
 		<input type="hidden" name="articleId" value="${complain.articleId}">
 		
 		<div class="form-group">

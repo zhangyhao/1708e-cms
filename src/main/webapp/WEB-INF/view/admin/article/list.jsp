@@ -53,7 +53,7 @@
         			<td width="200px">
         				<input type="button" value="删除"  class="btn btn-danger" onclick="del(${article.id})">
         				<input type="button" value="审核"  class="btn btn-warning" onclick="check('${article.id}')" >
-        				<%-- <input type="button" value="管理投诉"  class="btn btn-warning" onclick="complainList(${article.id})" > --%>
+        				<input type="button" value="管理投诉"  class="btn btn-warning" onclick="complainList(${article.id})" >
         			</td>
         		</tr>
         	</c:forEach>
@@ -103,7 +103,7 @@
   </div>
 </div>
 <!-- 投诉管理 -->
-<!-- <div class="modal fade"   id="complainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade"   id="complainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document" style="margin-left:100px;">
     <div class="modal-content" style="width:1200px;" >
       <div class="modal-header">
@@ -124,7 +124,7 @@
       </div>
     </div>
   </div>
-</div>	 -->
+</div>
 	
 <!-- </div>     -->
 <script>

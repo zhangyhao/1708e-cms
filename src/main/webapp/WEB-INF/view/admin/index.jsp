@@ -51,15 +51,15 @@
 				  <li class="nav-item">
 				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/admin/user')" >用户管理管理</a>
 				  </li>
-				  <!-- <li class="nav-item">
+				  <li class="nav-item">
 				    <a class="nav-link" href="javascript:void()" onclick="showWork($(this),'/article/plain')" >投诉管理</a>
-				  </li> -->
+				  </li>
 				</ul>	
 		</div>
 		
 		<div class="col-md-10" id="workcontent"> 
-		
-		    
+		</div>	
+		<div class="col-md-10" id="add"> 
 		</div>	
 	</div>
 	

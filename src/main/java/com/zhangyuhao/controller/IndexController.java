@@ -13,6 +13,7 @@ import com.github.pagehelper.PageInfo;
 import com.zhangyuhao.entity.Article;
 import com.zhangyuhao.entity.Category;
 import com.zhangyuhao.entity.Channel;
+import com.zhangyuhao.entity.Complain;
 import com.zhangyuhao.entity.Link;
 import com.zhangyuhao.entity.Slide;
 import com.zhangyuhao.service.ArticleService;
@@ -71,20 +72,35 @@ public class IndexController {
 			}
 		};
 		
-		
-		
+		Thread t6 = new Thread(){
+			@Override
+			public void run() {
+				List<Complain> complain = articleService.complain();
+				request.setAttribute("complain", complain);
+			}
+		};
+		Thread t7 = new Thread(){
+			public void run() {
+				List<Complain> a = articleService.newcom();
+				request.setAttribute("a", a);
+			};
+		};
 		
 		t1.start();
 		t2.start();
 		t3.start();
 		t4.start();
 		t5.start();
+		t6.start();
+		t7.start();
 		
 		t1.join();
 		t2.join();
 		t3.join();
 		t4.join();
 		t5.join();
+		t6.join();
+		t7.join();
 		return "index";
 	}
 	/**

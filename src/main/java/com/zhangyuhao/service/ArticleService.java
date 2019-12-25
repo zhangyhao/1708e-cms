@@ -68,6 +68,18 @@ public interface ArticleService {
 
 	PageInfo<Complain> getComplains(int articleId, int page);
 
-	List<Complain> plain();
+	List<Complain> plain(Integer type, Integer complain1, Integer complain2);
+
+	List<Complain> plainDesc(Integer type, Integer complain1, Integer complain2);
+	
+	Integer getArticleId(Integer userId);
+
+	List<Complain> plainAsc();
+
+	List<Complain> xq(Integer id);
+
+	List<Complain> complain();
+
+	List<Complain> newcom();
 
 }

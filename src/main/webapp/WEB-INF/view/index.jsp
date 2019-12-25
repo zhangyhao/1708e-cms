@@ -181,17 +181,29 @@
 					     </ol>
 					  </div>
 				</div>	
-				
+				<div class="card">
+					 <div class="card-header">
+					    最新投诉内容
+					  </div>
+					  <div class="card-body">
+					     <ol>
+					     	<c:forEach items="${a}" var="article" varStatus="index">
+					     		<li class="ex" style="color:red"> ${index.index+1}. ${article.content}</li>
+					     	</c:forEach>
+					     	
+					     </ol>
+					  </div>
+				</div>
 					
 			  <div class="card" style="margin-top:50px">
 					  <div class="card-header">
-					    公告
+					    投诉量最多文章
 					  </div>
 					  <div class="card-body">
 					     <ul>
-					     	<li>1</li>
-					     	<li>2</li>
-					     	<li>3</li>
+					     <c:forEach items="${complain}" var="article" varStatus="index">
+					     		<li class="ex"> ${index.index+1}. <a href="/article/detail?id=${article.id}" target="_blank" >${article.title}</a></li>
+					     	</c:forEach>
 					     </ul>
 					  </div>
 				</div>			

@@ -75,6 +75,15 @@
 		  ORDER BY id DESC 
     </select>
     
+    <select id="complain" resultMap="articleMapper">
+    	SELECT id,title,channel_id,category_id ,user_id, created,complainCnt
+		  FROM cms_article
+		  WHERE   deleted=0
+		         
+		  ORDER BY complainCnt DESC 
+		  LIMIT 10
+    </select>
+    
     <resultMap type="complain" id="ComplainMapper">
 		<result column="article_id" property="articleId"/>
 		<result column="complain_type" property="complainType"/>
@@ -90,4 +99,60 @@
 	<select id="getComplains" resultMap="ComplainMapper">
 		SELECT * FROM cms_complain where article_id=#{value}
 	</select>
+	
+	<select id="plain" resultType="com.zhangyuhao.entity.Complain">
+	
+	SELECT c.id,c.complain_type complainType,c.content,c.compain_option,c.src_url,c.picture,c.email,c.mobile,c.created,u.username,
+	a.title title,a.complainCnt 
+	FROM cms_complain c,cms_user u,cms_article a where 
+	c.user_id=u.id and c.article_id=a.id
+	<if test="type!='' and type!=null">
+		and complain_type=#{type}
+	</if>
+	<if test="complain1!='' and complain1!=null">
+		and complainCnt>=#{complain1}
+	</if>
+	<if test="complain2!='' and complain2!=null">
+		and complainCnt&lt;=#{complain2}
+	</if>
+	order by c.created desc
+	</select>
+	
+	<select id="plainDesc" resultType="com.zhangyuhao.entity.Complain">
+	
+	SELECT c.id,c.complain_type complainType,c.content,c.compain_option,c.src_url,c.picture,c.email,c.mobile,c.created,u.username,
+	a.title title,a.complainCnt 
+	FROM cms_complain c,cms_user u,cms_article a where 
+	c.user_id=u.id and c.article_id=a.id
+	<if test="type!='' and type!=null">
+		and complain_type=#{type}
+	</if>
+	<if test="complain1!='' and complain1!=null">
+		and complainCnt>=#{complain1}
+	</if>
+	<if test="complain2!='' and complain2!=null">
+		and complainCnt&lt;=#{complain2}
+	</if>
+	order by a.complainCnt desc
+	</select>
+	
+	
+	<select id="plainAsc" resultType="com.zhangyuhao.entity.Complain">
+	
+	SELECT c.id,c.complain_type complainType,c.content,c.compain_option,c.src_url,c.picture,c.email,c.mobile,c.created,u.username,
+	a.title title,a.complainCnt 
+	FROM cms_complain c,cms_user u,cms_article a where 
+	c.user_id=u.id and c.article_id=a.id
+	<if test="type!='' and type!=null">
+		and complain_type=#{type}
+	</if>
+	<if test="complain1!='' and complain1!=null">
+		and complainCnt>=#{complain1}
+	</if>
+	<if test="complain2!='' and complain2!=null">
+		and complainCnt&lt;=#{complain2}
+	</if>
+	order by a.complainCnt asc
+	</select>
+	
   </mapper>

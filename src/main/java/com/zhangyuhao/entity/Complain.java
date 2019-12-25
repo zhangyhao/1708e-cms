@@ -28,7 +28,15 @@ private Integer id               ;
 	private String title;
 	private String username;
 	
+	private Integer complainCnt;
 	
+	
+	public Integer getComplainCnt() {
+		return complainCnt;
+	}
+	public void setComplainCnt(Integer complainCnt) {
+		this.complainCnt = complainCnt;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -113,12 +121,15 @@ private Integer id               ;
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-	
 	@Override
 	public String toString() {
-		return "Complain [id=" + id + ", articleId=" + articleId + ", userId=" + userId + ", complainType="
-				+ complainType + ", compainOption=" + compainOption + ", scrUrl=" + scrUrl + ", picture=" + picture
-				+ ", content=" + content + ", email=" + email + ", mobile=" + mobile + ", created=" + created + "]";
+		return "Complain [id=" + id + ", articleId=" + articleId + ", userId="
+				+ userId + ", complainType=" + complainType
+				+ ", compainOption=" + compainOption + ", scrUrl=" + scrUrl
+				+ ", picture=" + picture + ", content=" + content + ", email="
+				+ email + ", mobile=" + mobile + ", created=" + created
+				+ ", user=" + user + ", title=" + title + ", username="
+				+ username + ", complainCnt=" + complainCnt + "]";
 	}
 	
 	

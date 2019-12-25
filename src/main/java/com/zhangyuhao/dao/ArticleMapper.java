@@ -129,9 +129,24 @@ public interface ArticleMapper {
 
 	List<Complain> getComplains(int articleId);
 
-	@Select("SELECT c.id,c.complain_type,c.content,c.compain_option,c.src_url,c.picture,c.email,c.mobile,c.created,u.username username,a.title title "
-			+ "FROM cms_complain c,cms_user u,cms_article a where c.user_id=u.id and c.article_id=a.id")
-	List<Complain> plain();
+	
+	List<Complain> plain(@Param("type")Integer type,@Param("complain1")Integer complain1, @Param("complain2")Integer complain2);
+
+	@Select("select user_id from cms_article where id=#{value}")
+	Integer getArticleId(Integer userId);
+
+	List<Complain> plainAsc();
+
+	@Select("SELECT c.id,c.complain_type complainType,c.content,c.compain_option,c.src_url,c.picture picture,c.email,c.mobile,c.created,u.username,a.title title ,a.complainCnt"
+			+ " FROM cms_complain c,cms_user u,cms_article a where c.user_id=u.id and c.article_id=a.id and c.id=#{id}")
+	List<Complain> xq(@Param("id")Integer id);
+
+	List<Complain> plainDesc();
+
+	List<Complain> complain();
+
+	@Select("select * from cms_complain ORDER BY id desc")
+	List<Complain> newcom();
 
 
 }
